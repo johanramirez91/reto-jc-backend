@@ -38,12 +38,6 @@ const gameSchema = new mongoose.Schema({
   imagenPortada: {
     type: String,
     default: 'https://via.placeholder.com/400x600?text=Sin+Imagen',
-    validate: {
-      validator: function(url) {
-        return /^https?:\/\/.+\.(jpg|jpeg|png|webp|gif)(\?.*)?$/i.test(url) || url === 'https://via.placeholder.com/400x600?text=Sin+Imagen';
-      },
-      message: 'La URL de la imagen debe ser válida y terminar en jpg, jpeg, png, webp o gif'
-    }
   },
   descripcion: {
     type: String,

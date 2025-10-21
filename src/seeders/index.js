@@ -24,13 +24,6 @@ const TITULOS_EJEMPLO = [
 
 const DIFICULTADES = ['Fácil', 'Normal', 'Difícil', 'Muy Difícil'];
 
-const generateGameImage = () => {
-  const imageId = faker.number.int({ min: 100, max: 999 });
-  const extensions = ['jpg', 'jpeg', 'png', 'webp'];
-  const extension = faker.helpers.arrayElement(extensions);
-  return `https://picsum.photos/400/600.${extension}?random=${imageId}`;
-};
-
 const generateFakeGame = () => {
   const titulo = faker.helpers.arrayElement(TITULOS_EJEMPLO);
   const genero = faker.helpers.arrayElement(GENEROS);
@@ -43,7 +36,7 @@ const generateFakeGame = () => {
     plataforma: plataforma,
     añoLanzamiento: faker.number.int({ min: 2010, max: 2024 }),
     desarrollador: desarrollador,
-    imagenPortada: generateGameImage(),
+    imagenPortada: faker.image.urlPicsumPhotos({ category: 'games', width: 400, height: 600 }),
     descripcion: faker.lorem.paragraph({ min: 2, max: 4 }),
     completado: faker.datatype.boolean({ probability: 0.3 }),
     fechaCreacion: faker.date.between({ 
