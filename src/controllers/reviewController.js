@@ -284,7 +284,7 @@ const getReviewStats = async (req, res) => {
       {
         $group: {
           _id: null,
-          totalReseñas: { $sum: 1 },
+          totalResenas: { $sum: 1 },
           puntuacionPromedio: { $avg: '$puntuacion' },
           horasTotalesJugadas: { $sum: '$horasJugadas' },
           totalRecomendaciones: { $sum: { $cond: ['$recomendaria', 1, 0] } },
@@ -316,7 +316,7 @@ const getReviewStats = async (req, res) => {
         $group: {
           _id: '$juegoId',
           puntuacionPromedio: { $avg: '$puntuacion' },
-          totalReseñas: { $sum: 1 }
+          totalResenas: { $sum: 1 }
         }
       },
       {
@@ -341,7 +341,7 @@ const getReviewStats = async (req, res) => {
           titulo: '$juego.titulo',
           genero: '$juego.genero',
           puntuacionPromedio: { $round: ['$puntuacionPromedio', 1] },
-          totalReseñas: 1
+          totalResenas: 1
         }
       }
     ]);
@@ -351,7 +351,7 @@ const getReviewStats = async (req, res) => {
       data: {
         ...stats[0],
         puntuacionPromedio: stats[0] ? Math.round(stats[0].puntuacionPromedio * 10) / 10 : 0,
-        porcentajeRecomendacion: stats[0] ? Math.round((stats[0].totalRecomendaciones / stats[0].totalReseñas) * 100) : 0,
+        porcentajeRecomendacion: stats[0] ? Math.round((stats[0].totalRecomendaciones / stats[0].totalResenas) * 100) : 0,
         distribuccionPuntuaciones: puntuacionCount,
         distribuccionDificultad: dificultadCount,
         topJuegosPuntuacion: topGames

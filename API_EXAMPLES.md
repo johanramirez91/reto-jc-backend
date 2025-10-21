@@ -149,7 +149,7 @@ Content-Type: application/json
 
 {
   "puntuacion": 4,
-  "textoReseña": "Después de más tiempo jugando, ajusto mi reseña. Sigue siendo un excelente juego, pero encontré algunos bugs menores que afectan la experiencia.",
+  "textoResena": "Después de más tiempo jugando, ajusto mi reseña. Sigue siendo un excelente juego, pero encontré algunos bugs menores que afectan la experiencia.",
   "horasJugadas": 120,
   "dificultad": "Difícil"
 }
@@ -225,7 +225,7 @@ GET http://localhost:3000/api/resenas/stats
 
 ### Crear una reseña
 ```bash
-curl -X POST "http://localhost:3000/api/reseñas" \
+curl -X POST "http://localhost:3000/api/resenas" \
   -H "Content-Type: application/json" \
   -d '{
     "juegoId": "ID_DEL_JUEGO",
