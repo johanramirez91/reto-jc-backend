@@ -16,7 +16,7 @@ const reviewSchema = new mongoose.Schema({
       message: 'La puntuación debe ser un número entero'
     }
   },
-  textoReseña: {
+  textoResena: {
     type: String,
     required: [true, 'El texto de la reseña es obligatorio'],
     trim: true,
@@ -90,7 +90,7 @@ reviewSchema.statics.getGameStats = async function(gameId) {
     {
       $group: {
         _id: null,
-        totalReseñas: { $sum: 1 },
+        totalResenas: { $sum: 1 },
         puntuacionPromedio: { $avg: '$puntuacion' },
         horasTotales: { $sum: '$horasJugadas' },
         recomendaciones: { $sum: { $cond: ['$recomendaria', 1, 0] } }

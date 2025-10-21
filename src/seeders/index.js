@@ -53,7 +53,7 @@ const generateFakeReview = (gameId) => {
   return {
     juegoId: gameId,
     puntuacion: puntuacion,
-    textoReseña: faker.lorem.paragraphs({ min: 1, max: 3 }, '\n\n'),
+    textoResena: faker.lorem.paragraphs({ min: 1, max: 3 }, '\n\n'),
     horasJugadas: faker.number.int({ min: 1, max: 500 }),
     dificultad: faker.helpers.arrayElement(DIFICULTADES),
     recomendaria: recomendaria,
@@ -137,7 +137,7 @@ const seedDatabase = async () => {
         $group: {
           _id: '$juegoId',
           puntuacionPromedio: { $avg: '$puntuacion' },
-          totalReseñas: { $sum: 1 }
+          totalResenas: { $sum: 1 }
         }
       },
       {
@@ -156,7 +156,7 @@ const seedDatabase = async () => {
     if (topGames.length > 0) {
       console.log('\n🏆 TOP 5 JUEGOS MEJOR PUNTUADOS:');
       topGames.forEach((game, index) => {
-        console.log(`  ${index + 1}. ${game.juego.titulo} - ${game.puntuacionPromedio.toFixed(1)}⭐ (${game.totalReseñas} reseña(s))`);
+        console.log(`  ${index + 1}. ${game.juego.titulo} - ${game.puntuacionPromedio.toFixed(1)}⭐ (${game.totalResenas} reseña(s))`);
       });
     }
 

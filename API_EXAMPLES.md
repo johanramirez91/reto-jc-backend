@@ -119,7 +119,7 @@ GET http://localhost:3000/api/resenas?recomendaria=true
 
 ### 3. Obtener reseñas de un juego específico
 ```http
-GET http://localhost:3000/api/reseñas/juego/{ID_DEL_JUEGO}
+GET http://localhost:3000/api/resenas/juego/{ID_DEL_JUEGO}
 ```
 
 ### 4. Obtener una reseña específica
@@ -135,7 +135,7 @@ Content-Type: application/json
 {
   "juegoId": "ID_DEL_JUEGO_AQUÍ",
   "puntuacion": 5,
-  "textoReseña": "¡Increíble juego! La historia es envolvente, los gráficos son impresionantes y la jugabilidad es muy fluida. Definitivamente uno de los mejores RPGs que he jugado. La libertad de exploración es fantástica y cada misión secundaria se siente significativa.",
+  "textoResena": "¡Increíble juego! La historia es envolvente, los gráficos son impresionantes y la jugabilidad es muy fluida. Definitivamente uno de los mejores RPGs que he jugado. La libertad de exploración es fantástica y cada misión secundaria se siente significativa.",
   "horasJugadas": 85,
   "dificultad": "Normal",
   "recomendaria": true
@@ -201,7 +201,7 @@ GET http://localhost:3000/api/resenas/stats
 {
   "success": true,
   "data": {
-    "totalReseñas": 33,
+    "totalResenas": 33,
     "puntuacionPromedio": 3.8,
     "horasTotalesJugadas": 2450,
     "porcentajeRecomendacion": 72,
@@ -216,7 +216,7 @@ GET http://localhost:3000/api/resenas/stats
       {
         "titulo": "The Witcher 3",
         "puntuacionPromedio": 4.8,
-        "totalReseñas": 3
+        "totalResenas": 3
       }
     ]
   }
@@ -230,7 +230,7 @@ curl -X POST "http://localhost:3000/api/reseñas" \
   -d '{
     "juegoId": "ID_DEL_JUEGO",
     "puntuacion": 5,
-    "textoReseña": "¡Excelente juego!",
+    "textoResena": "¡Excelente juego!",
     "horasJugadas": 60,
     "dificultad": "Difícil",
     "recomendaria": true

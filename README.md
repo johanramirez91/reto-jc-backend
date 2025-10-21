@@ -33,17 +33,17 @@ API REST para gestionar biblioteca personal de videojuegos con sistema de reseñ
 | `PATCH` | `/api/juegos/:id/completado` | Marcar como completado |
 | `DELETE` | `/api/juegos/:id` | Eliminar juego |
 
-### ⭐ Reseñas (`/api/reseñas`)
+### ⭐ Reseñas (`/api/resenas`)
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
-| `GET` | `/api/reseñas` | Obtener todas las reseñas |
-| `GET` | `/api/reseñas/stats` | Estadísticas de reseñas |
-| `GET` | `/api/reseñas/juego/:juegoId` | Reseñas de un juego específico |
-| `GET` | `/api/reseñas/:id` | Obtener reseña específica |
-| `POST` | `/api/reseñas` | Crear nueva reseña |
-| `PUT` | `/api/reseñas/:id` | Actualizar reseña |
-| `DELETE` | `/api/reseñas/:id` | Eliminar reseña |
+| `GET` | `/api/resenas` | Obtener todas las reseñas |
+| `GET` | `/api/resenas/stats` | Estadísticas de reseñas |
+| `GET` | `/api/resenas/juego/:juegoId` | Reseñas de un juego específico |
+| `GET` | `/api/resenas/:id` | Obtener reseña específica |
+| `POST` | `/api/resenas` | Crear nueva reseña |
+| `PUT` | `/api/resenas/:id` | Actualizar reseña |
+| `DELETE` | `/api/resenas/:id` | Eliminar reseña |
 
 ## 📄 Ejemplos de Uso
 
@@ -66,7 +66,7 @@ Content-Type: application/json
 
 ### Crear una Reseña
 ```bash
-POST /api/reseñas
+POST /api/resenas
 Content-Type: application/json
 
 {
